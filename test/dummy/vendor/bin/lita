@@ -3,7 +3,7 @@
 require "rubygems"
 require "bundler/setup"
 
-while true
+loop do
   puts "Running lita..."
   sleep 1000
 end
