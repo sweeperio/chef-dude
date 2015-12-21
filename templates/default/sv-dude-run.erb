@@ -1,2 +1,4 @@
 #!/bin/sh
-cd <%= @options[:install_dir] %> && bundle exec lita
+exec 2>&1
+cd <%= @options[:path] %>
+exec <%= @options[:chpst] %> -u <%= @options[:user] %> bundle exec vendor/bin/lita

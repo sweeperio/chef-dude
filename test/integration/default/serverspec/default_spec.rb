@@ -7,4 +7,10 @@ describe "dude::default" do
     it { should be_symlink }
     it { should be_linked_to "/etc/sv/dude" }
   end
+
+  describe command("sv status dude") do
+    its(:stdout) { should contain("run:") }
+    its(:stdout) { should_not contain("down:") }
+    its(:exit_status) { should eq(0) }
+  end
 end

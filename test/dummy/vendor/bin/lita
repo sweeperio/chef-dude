@@ -1,0 +1,9 @@
+#!/usr/bin/ruby
+
+require "rubygems"
+require "bundler/setup"
+
+while true
+  puts "Running lita..."
+  sleep 1000
+end

@@ -1,6 +1,8 @@
 ---
 driver:
   name: vagrant
+  synced_folders:
+    - ["test/dummy", "/home/vagrant/service", "create: true"]
 
 provisioner:
   name: chef_zero
@@ -11,6 +13,8 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[runit]
       - recipe[dude::default]
     attributes:
+      dude:
+        run_as_user: vagrant
+        install_dir: /home/vagrant/service
