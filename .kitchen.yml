@@ -15,6 +15,7 @@ suites:
     run_list:
       - recipe[dude::default]
     attributes:
+      test_run: true
       dude:
         run_as_user: vagrant
         install_dir: /home/vagrant/service

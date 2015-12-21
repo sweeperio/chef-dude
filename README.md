@@ -5,6 +5,10 @@ Installs and configures [dude].
 
 [dude]: https://github.com/sweeperio/dude
 
+## Assumptions
+
+* Ruby is installed on the target node
+
 ## What This Does
 
 * Creates/enables a runit service for [dude]

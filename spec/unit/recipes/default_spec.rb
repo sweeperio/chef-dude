@@ -21,8 +21,8 @@ describe "dude::default" do
     expect(chef_run).to include_recipe("runit")
   end
 
-  it "installs ruby" do
-    expect(chef_run).to install_package("ruby")
+  it "does not install ruby" do
+    expect(chef_run).to_not install_package("ruby")
   end
 
   it "installs bundler (if necessary)" do
@@ -38,5 +38,19 @@ describe "dude::default" do
         path: "/path"
       }
     )
+  end
+
+  context "with the test_run flag set" do
+    cached(:chef_run) do
+      runner = ChefSpec::ServerRunner.new do |node|
+        node.set["test_run"] = true
+      end
+
+      runner.converge(described_recipe)
+    end
+
+    it "installs ruby (for testing)" do
+      expect(chef_run).to install_package("ruby")
+    end
   end
 end
