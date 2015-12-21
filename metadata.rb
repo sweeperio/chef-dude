@@ -7,3 +7,5 @@ description      "Installs and configures dude"
 long_description "Installs and configures dude"
 version          "0.1.0"
 # rubocop:enable Style/SingleSpaceBeforeFirstArg
+
+depends "runit"
