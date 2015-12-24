@@ -4,8 +4,6 @@
 #
 # Copyright (c) 2015 Sweeper Devs, All Rights Reserved.
 
-require "spec_helper"
-
 describe "dude::default" do
   cached(:chef_run) do
     runner = ChefSpec::ServerRunner.new do |node|
