@@ -11,5 +11,6 @@ Berksfile.lock
 bin/*
 .bundle/*
 
+.chef
 .kitchen/
 .kitchen.local.yml
